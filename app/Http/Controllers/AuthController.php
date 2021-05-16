@@ -8,7 +8,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
-{
+{   
+    /**
+     * Register a user.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function register(Request $request){
 
         $fields=$request->validate([
@@ -35,7 +41,12 @@ class AuthController extends Controller
 
     }
    
-    //login method
+     /**
+     * Log in with a barear token
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function login(Request $request){
 
         $fields=$request->validate([
@@ -68,7 +79,12 @@ class AuthController extends Controller
 
     }
 
-    //log out 
+     /**
+     * Log out and destroy token
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function logout(Request $request){
 
         auth()->user()->tokens()->delete();
@@ -78,7 +94,7 @@ class AuthController extends Controller
             'extra' => 'Token destroyed'
         ];
 
-        return $response;
+        return response($response,201);
 
     }
 
