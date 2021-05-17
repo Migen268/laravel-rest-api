@@ -1,4 +1,4 @@
-SIPLE REST API with crud methods avaliable
+SIMPLE REST API with crud methods avaliable
 
 Resource  used :book model
 
