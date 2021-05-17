@@ -31,13 +31,13 @@ Route::get('/books/kerko/{name}',[BookController::class,'kerko']);
 
 Route::get('/books/exists/{id}',[BookController::class,'check_existence']);
 
-Route::post('/user/register',[AuthController::class,'register']);
+// Route::post('/user/register',[AuthController::class,'register']);
 
-Route::post('/user/login',[AuthController::class,'login']);
+// Route::post('/user/login',[AuthController::class,'login']);
 
 
 //protected Routes
-Route::group(['middleware'=>['auth:sanctum']], function (){
+ Route::group(['middleware'=>['auth:sanctum']], function (){
 
     Route::post('/books',[BookController::class,'store']);
 
@@ -45,5 +45,5 @@ Route::group(['middleware'=>['auth:sanctum']], function (){
 
     Route::delete('/books/{id}',[BookController::class,'destroy']);
 
-    Route::post('/user/logout',[AuthController::class,'logout']);
-});
+   // Route::post('/user/logout',[AuthController::class,'logout']);
+ });

@@ -48,7 +48,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function login(Request $request){
-
+        // return "jemi ketu";
         $fields=$request->validate([
             'email' => 'required|string',
             'password' => 'required|string'
